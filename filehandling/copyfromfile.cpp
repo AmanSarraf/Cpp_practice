@@ -72,6 +72,51 @@ class fruit
 
 
     }
+
+    void showalldata()
+    {
+        ifstream fin;
+        cout<<"\nfrom original file";
+        fin.open("fruit.dat",ios::in);
+        if(!fin)
+        {
+            cout<<"file not found";
+        }
+        else
+        {
+            fin.read((char*)this,sizeof(*this));
+            while(!fin.eof())
+            {
+                showfruit();
+                fin.read((char*)this,sizeof(*this));
+        
+            }
+
+
+        }
+        fin.close();
+
+        cout<<"\nfrom copied file";
+
+          fin.open("copy.dat",ios::in);
+        if(!fin)
+        {
+            cout<<"file not found";
+        }
+        else
+        {
+            fin.read((char*)this,sizeof(*this));
+            while(!fin.eof())
+            {
+                showfruit();
+                fin.read((char*)this,sizeof(*this));
+        
+            }
+
+
+        }
+        fin.close();
+    }
 };
 
 int main()
@@ -81,7 +126,13 @@ int main()
     f1.setfruit();
     // f1.showfruit();
     f1.savedata();
+    f1.copydata();
+   
+   f1.setfruit();
+   f1.savedata();
+   f1.copydata();
    f1.setfruit();
    f1.savedata();
     f1.copydata();
+f1.showalldata();
 }
