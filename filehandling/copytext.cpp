@@ -22,7 +22,7 @@ void copy()
     copy.open("copy.txt",ios::out);
     if(read&&copy)
     {
-        while(getline(read,line))
+        while(getline(read,line))    // read from file and store in a local variable
         {
             copy<<line<<endl;
         }
