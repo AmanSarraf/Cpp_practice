@@ -35,5 +35,5 @@ x big(x a,x b)
 int main()
 {
   
-    cout<<big(8,4);
+    cout<<big(7.5,4.2);
 }

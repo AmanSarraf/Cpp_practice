@@ -1,3 +1,2 @@
-f1.showfruit();
-    f1.savedata();
-    f1.copydata();
+ b1.inputbook();
+//     b1.savebook();
